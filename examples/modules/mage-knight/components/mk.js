@@ -9,6 +9,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Client } from 'boardgame.io/client';
+import { HexGrid } from 'boardgame.io/ui';
 import { MageKnight } from '../game';
 import './mk.css';
 
@@ -21,7 +22,19 @@ class Board extends React.Component {
   };
 
   render() {
-    return <div className="phases" />;
+    return (
+      <div className="mk">
+        <div className="mk-hand">
+          {this.props.G.hand.map(card => (
+            <pre className="mk-card" key={card.name}>
+              {JSON.stringify(card, null, 2)}
+            </pre>
+          ))}
+        </div>
+
+        <HexGrid radius={6} />
+      </div>
+    );
   }
 }
 

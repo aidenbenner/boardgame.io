@@ -6,15 +6,9 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import { Game } from 'boardgame.io/core';
-import * as Card from './cards';
-
-export const MageKnight = Game({
-  setup: () => ({
-    hand: [Card.STAMINA, Card.MARCH],
-  }),
-
-  moves: {},
-
-  flow: {},
-});
+export const GREEN = 'GREEN';
+export const RED = 'RED';
+export const WHITE = 'WHITE';
+export const BLUE = 'BLUE';
+export const BLACK = 'BLACK';
+export const GOLD = 'GOLD';
