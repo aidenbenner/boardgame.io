@@ -10,8 +10,13 @@ import tic_tac_toe from './tic-tac-toe';
 import chess from './chess';
 import phases from './phases';
 import liars_dice from './liars-dice';
+import mageknight from './mage-knight';
 
 const routes = [
+  {
+    name: 'Mage Knight',
+    routes: mageknight.routes,
+  },
   {
     name: 'Tic-Tac-Toe',
     routes: tic_tac_toe.routes,
