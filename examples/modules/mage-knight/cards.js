@@ -11,13 +11,13 @@ import * as Mana from './mana';
 export const MARCH = {
   name: 'MARCH',
   basic: { move: 2 },
-  adv: { move: 4 },
+  advanced: { move: 4 },
   mana: Mana.GREEN,
 };
 
 export const STAMINA = {
   name: 'STAMINA',
   basic: { move: 2 },
-  adv: { move: 4 },
+  advanced: { move: 4 },
   mana: Mana.BLUE,
 };

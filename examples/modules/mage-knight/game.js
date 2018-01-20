@@ -8,13 +8,24 @@
 
 import { Game } from 'boardgame.io/core';
 import * as Card from './cards';
+import Moves from './moves';
 
 export const MageKnight = Game({
   setup: () => ({
     hand: [Card.STAMINA, Card.MARCH],
+    moveTotal: 0,
   }),
 
-  moves: {},
+  moves: Moves,
 
-  flow: {},
+  flow: {
+    phases: [
+      {
+        name: 'move',
+      },
+      {
+        name: 'combat',
+      },
+    ],
+  },
 });

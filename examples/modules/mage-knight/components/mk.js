@@ -21,12 +21,20 @@ class Board extends React.Component {
     events: PropTypes.any,
   };
 
+  clickCard = card => {
+    this.props.moves.playCard(card);
+  };
+
   render() {
     return (
       <div className="mk">
         <div className="mk-hand">
           {this.props.G.hand.map(card => (
-            <pre className="mk-card" key={card.name}>
+            <pre
+              className="mk-card"
+              key={card.name}
+              onClick={() => this.clickCard(card)}
+            >
               {JSON.stringify(card, null, 2)}
             </pre>
           ))}
