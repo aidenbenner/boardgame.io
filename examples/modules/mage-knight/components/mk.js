@@ -9,7 +9,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Client } from 'boardgame.io/client';
-import { HexGrid } from 'boardgame.io/ui';
+import { HexGrid, Token } from 'boardgame.io/ui';
 import { MageKnight } from '../game';
 import './mk.css';
 
@@ -21,8 +21,18 @@ class Board extends React.Component {
     events: PropTypes.any,
   };
 
+  state = {
+    x: 0,
+    y: 0,
+    z: 0,
+  };
+
   clickCard = card => {
     this.props.moves.playCard(card);
+  };
+
+  clickHex = ({ x, y, z }) => {
+    this.setState({ x, y, z });
   };
 
   render() {
@@ -40,7 +50,15 @@ class Board extends React.Component {
           ))}
         </div>
 
-        <HexGrid radius={6} />
+        <HexGrid radius={6} onClick={this.clickHex}>
+          <Token
+            x={this.state.x}
+            y={this.state.y}
+            z={this.state.z}
+            animate={true}
+            style={{ fill: '#555' }}
+          />
+        </HexGrid>
       </div>
     );
   }
