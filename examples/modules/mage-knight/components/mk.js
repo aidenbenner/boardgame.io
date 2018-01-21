@@ -50,7 +50,7 @@ class Board extends React.Component {
           ))}
         </div>
 
-        <HexGrid radius={6} onClick={this.clickHex}>
+        <HexGrid levels={6} onClick={this.clickHex}>
           <Token
             x={this.state.x}
             y={this.state.y}
@@ -68,6 +68,7 @@ const App = Client({
   game: MageKnight,
   numPlayers: 1,
   board: Board,
+  debug: false,
 });
 
 const Render = () => (
