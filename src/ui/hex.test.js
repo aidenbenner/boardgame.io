@@ -7,7 +7,8 @@
  */
 
 import React from 'react';
-import { HexGrid, Hex } from './hex';
+import { HexGrid } from './hex';
+import Token from './token';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -49,7 +50,7 @@ test('child', () => {
   {
     const grid = Enzyme.mount(
       <HexGrid layers={2} outline={false}>
-        <Hex />
+        <Token />
       </HexGrid>
     );
     expect(grid.html()).toContain('polygon');
@@ -58,9 +59,9 @@ test('child', () => {
   {
     const grid = Enzyme.mount(
       <HexGrid layers={2} outline={false}>
-        <Hex>
+        <Token>
           <div />
-        </Hex>
+        </Token>
       </HexGrid>
     );
     expect(grid.html()).not.toContain('polygon');
